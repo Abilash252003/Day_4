@@ -1,0 +1,27 @@
+////100 days of RTL challenge////
+
+////Abilash P////
+
+////Half Subractor////
+
+module half_subractor_tb();
+
+reg  a_in, b_in;
+wire diff, borrow;
+
+half_subractor HS (.a_in(a_in), .b_in(b_in), .diff(diff), .borrow(borrow));
+
+integer i;
+
+initial
+begin
+   for(i=0; i<4; i=i+1)
+   begin
+      {a_in,b_in} = i;
+      #10;
+   end
+end
+
+initial
+    $monitor ("Input A = %b----Input B = %b----Output Diff = %b----Output borrow = %b", a_in, b_in, diff, borrow);
+endmodule
