@@ -1,0 +1,20 @@
+////100 days of RTL challenge////
+
+////Abilash P////
+
+////Half Subractor////
+
+module half_subractor (a_in, b_in, diff, borrow);
+
+input a_in, b_in;
+
+output diff, borrow;
+
+assign diff   = a_in ^ b_in;
+
+assign borrow = ~(a_in) & b_in;
+
+endmodule
+
+
+
